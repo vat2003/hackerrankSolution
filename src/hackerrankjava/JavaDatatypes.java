@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author anhta
  */
-public class demo1 {
+public class JavaDatatypes {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
