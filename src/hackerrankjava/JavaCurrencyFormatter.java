@@ -20,7 +20,7 @@ import java.util.Scanner;
     China: ￥12,324.13
     France: 12 324,13 €
  */
-/*https://stackabuse.com/how-to-format-number-as-currency-string-in-java/*/
+ /*https://stackabuse.com/how-to-format-number-as-currency-string-in-java/*/
 public class JavaCurrencyFormatter {
 
     public static void main(String[] args) {
@@ -32,28 +32,33 @@ public class JavaCurrencyFormatter {
         Locale indiaLC = new Locale("en", "IN");
         Locale chinaLC = Locale.CHINA;
         Locale franceLC = Locale.FRANCE;
-        
+        Locale vietnamLC = new Locale("nv", "VN"); //Định dạng locale việt nam
         //Create a Currency instance for the Locale
 //        Currency USCurrency = Currency.getInstance(usLC);
 //        Currency ChinaCurrency = Currency.getInstance(chinaLC);
 //        Currency FranceCurrency = Currency.getInstance(franceLC);
-        
+
         //Create a formatter given the Locale
         NumberFormat USFormat = NumberFormat.getCurrencyInstance(usLC);
         NumberFormat IndiaFormat = NumberFormat.getCurrencyInstance(indiaLC);
         NumberFormat ChinaFormat = NumberFormat.getCurrencyInstance(chinaLC);
         NumberFormat FranceFormat = NumberFormat.getCurrencyInstance(franceLC);
+        NumberFormat VietNamFormat = NumberFormat.getCurrencyInstance(vietnamLC);
 //        System.out.println(USCurrency.getDisplayName() + ": " + USFormat.format(payment));
-       
+
         String us = USFormat.format(payment);
         String india = IndiaFormat.format(payment);
         String china = ChinaFormat.format(payment);
         String france = FranceFormat.format(payment);
-        
+        String vietnam = VietNamFormat.format(payment);
+
         //OUTPUT
         System.out.println("US: " + us);
         System.out.println("India: " + india);
         System.out.println("China: " + china);
         System.out.println("France: " + france);
+        System.out.println("VietNam: " + vietnam);
+//DecimalFormat formatter = new DecimalFormat("###,###,###");
+//System.out.println(formatter.format(1000000)+" VNĐ");
     }
 }
